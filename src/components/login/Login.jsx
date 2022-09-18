@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 
 const Login = () => {
   return (
     <div>
       <h2>Login</h2>
-      <form action="submit" onSubmit={console.log("submitted")}>
+      <form action="submit" onSubmit={() => console.log("submitted")}>
         <label>
           username &nbsp;
           <input type="text" name="username" />
