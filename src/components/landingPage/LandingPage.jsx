@@ -3,10 +3,8 @@ import React, { useState } from "react";
 import Login from "../login/Login";
 import Register from "../register/Register";
 
-const LandingPage = () => {
+const LandingPage = ({ isLoggedIn, setIsLoggedIn }) => {
   const [isRegisterOn, setIsRegisterOn] = useState(false);
-  // eslint-disable-next-line no-unused-vars
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return !isLoggedIn ? (
     <div>
@@ -15,7 +13,7 @@ const LandingPage = () => {
         <Register setIsRegisterOn={setIsRegisterOn} />
       ) : (
         <>
-          <Login />
+          <Login setIsLoggedIn={setIsLoggedIn} />
           <br />
           New User? &nbsp; <button onClick={() => setIsRegisterOn(true)}>sign up here</button>
         </>

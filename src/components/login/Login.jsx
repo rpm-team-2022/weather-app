@@ -5,7 +5,8 @@ const initalForm = {
   password: "",
 };
 
-const Login = () => {
+// eslint-disable-next-line react/prop-types
+const Login = ({ setIsLoggedIn }) => {
   const [form, setForm] = useState(initalForm);
 
   const changeHandler = (e) => {
@@ -15,8 +16,9 @@ const Login = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log(form);
+    setIsLoggedIn(true);
   };
+
   return (
     <div>
       <h2>Login</h2>
