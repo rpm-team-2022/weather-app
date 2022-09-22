@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Base_URL, options } from "../../constants";
-import WeatherNow from "../../weather-now/WeatherNow";
+import WeatherNow from "../weather-now/WeatherNow";
 import WeatherHistories from "../weather_histories/WeatherHistories";
 
 const initialForm = {
