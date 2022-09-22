@@ -5,14 +5,14 @@ import WeatherHistory from "../weather_history/WeatherHistory";
 const WeatherHistories = ({ history }) => {
   return (
     <div>
-      <h2>previous Weather Search history</h2>
+      <h2>Recent Search History</h2>
       {typeof history === "string" ? (
         <p>{history}</p>
       ) : (
         history
           .sort((a, b) => b.id - a.id)
-          .map((el) => {
-            if (el.country) return <WeatherHistory key={el.id} query={el} />;
+          .map((el, idx) => {
+            if (el.country && idx <= 5) return <WeatherHistory key={el.id} query={el} />;
           })
       )}
     </div>

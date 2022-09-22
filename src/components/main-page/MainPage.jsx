@@ -74,14 +74,13 @@ const MainPage = ({ message, setMessage, user_id }) => {
           },
         })
         .then((res) => {
-          // console.log(res);
           setHistory(res.data.history);
         })
         .catch((err) => console.log(err));
-  }, []);
+  }, [weatherData]);
 
   useEffect(() => {
-    weatherData.country &&
+    weatherData &&
       axios
         .post(
           `https://weatherappback.herokuapp.com/history/addToHistory`,
@@ -104,8 +103,8 @@ const MainPage = ({ message, setMessage, user_id }) => {
             },
           }
         )
-        .then((res) => {
-          console.log(res);
+        .then(() => {
+          setMessage("Added to History");
         })
         .catch((err) => console.log(err));
   }, [weatherData]);
