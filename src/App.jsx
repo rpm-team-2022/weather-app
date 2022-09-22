@@ -8,9 +8,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
     <div className="App">
-
-        {!isLoggedIn ? <LandingPage setIsLoggedIn={setIsLoggedIn} /> : <MainPage />}
-      
+         {!isLoggedIn ? <LandingPage setIsLoggedIn={setIsLoggedIn} /> : <MainPage />} 
     </div>
   );
 }

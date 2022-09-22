@@ -5,9 +5,10 @@
 }
 
 html ,body{
-  min-height: 100vh;
-  background-color: rgba(0, 1, 26, 0.607);
-  
+  min-height: 100%;
+   background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(./components/images/pexels-binyamin-mellish-108941.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .logo {
   background-image: url("./components/images/LOGO.png");
@@ -42,4 +43,12 @@ html ,body{
     border-top-right-radius: 0.3rem;
     border-bottom-right-radius: 0.3rem;
   }
+}
+
+/* ******************** */
+
+.mainpage{
+  background-image: url(./components/images/main.jpg);
+  background-size: cover;
+  min-height: 100%;
 }

@@ -23,32 +23,38 @@ const MainPage = () => {
   };
 
   return (
-    <div>
-      <h2>this is the main page where all the magic happens</h2>
-      <form onSubmit={submitHandler}>
-        <label>
-          city: &nbsp;
-          <input
-            name="city"
-            type="text"
-            placeholder="please enter a city name"
-            value={form.city}
-            onChange={changeHandler}
-          />
-        </label>
-        <label>
-          Country: &nbsp;
-          <input
-            name="country"
-            type="text"
-            placeholder="please enter a city name"
-            value={form.country}
-            onChange={changeHandler}
-          />
-        </label>
-        &nbsp;
-        <button type="submit">submit</button>
-      </form>
+    <div className="mainpage">
+    <div className="row d-flex justify-content-center pt-5 ">
+      <div className="col-md-10">
+        <form onSubmit={submitHandler} >
+          <div className="input-group ">
+            <input
+              id="form1" className="form-control rounded-2 border border-info col-md-3 px-2 mx-2"
+              name="city"
+              type="text"
+              placeholder="City"
+              value={form.city}
+              onChange={changeHandler}
+            />
+
+            <input
+              id="form2" className="form-control border border-info col-md-3 rounded-2  px-2 mx-2"
+              name="country"
+              type="text"
+              placeholder="Country"
+              value={form.country}
+              onChange={changeHandler}
+            />
+
+
+            <button type="submit" className="btn btn-secondary btn-block rounded-2 col-md-1 mx-2">
+              <i className="fas fa-search"></i>
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </div >
     </div>
   );
 };
