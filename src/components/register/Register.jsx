@@ -1,15 +1,16 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from "react";
+import axios from "axios";
 
 const initialForm = {
   firstName: "",
   lastName: "",
-  username: "",
+  userName: "",
   password: "",
   email: "",
 };
 
-const Register = ({ setIsRegisterOn }) => {
+const Register = ({ setIsRegisterOn, setMessage }) => {
   const [form, setForm] = useState(initialForm);
 
   const changeHandler = (e) => {
@@ -19,8 +20,13 @@ const Register = ({ setIsRegisterOn }) => {
 
   const registerSubmitHandler = (e) => {
     e.preventDefault();
-    setIsRegisterOn(false);
-    console.log(form);
+    axios
+      .post("https://weatherappback.herokuapp.com/auth/register", form)
+      .then((res) => {
+        setMessage(res.data.message);
+        setIsRegisterOn(false);
+      })
+      .catch((err) => console.log(err));
   };
 
   return (
@@ -56,9 +62,9 @@ const Register = ({ setIsRegisterOn }) => {
             Username &nbsp;
             <input
               type="text"
-              name="username"
+              name="userName"
               placeholder="enter a username"
-              value={form.username}
+              value={form.userName}
               onChange={changeHandler}
             />
           </label>
@@ -91,6 +97,14 @@ const Register = ({ setIsRegisterOn }) => {
           </div>
         </div>
       </form>
+      <div>
+        <p>
+          do you have an account &nbsp;
+          <span>
+            <button onClick={() => setIsRegisterOn()}>log in </button>
+          </span>
+        </p>
+      </div>
     </div>
   );
 };

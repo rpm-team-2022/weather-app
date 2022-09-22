@@ -8,6 +8,9 @@ import { Routes, Route } from "react-router-dom";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [message, setMessage] = useState(null);
+  const [user_id, setUser_id] = useState(null);
+
   return (
     <div className="App">
       <Nav setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn} />
@@ -16,9 +19,15 @@ function App() {
           path="/"
           element={
             !isLoggedIn ? (
-              <LandingPage setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn} />
+              <LandingPage
+                setIsLoggedIn={setIsLoggedIn}
+                isLoggedIn={isLoggedIn}
+                message={message}
+                setMessage={setMessage}
+                setUser_id={setUser_id}
+              />
             ) : (
-              <MainPage />
+              <MainPage message={message} setMessage={setMessage} user_id={user_id} />
             )
           }
         />

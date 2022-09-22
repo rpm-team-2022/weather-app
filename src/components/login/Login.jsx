@@ -1,12 +1,13 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 const initalForm = {
-  username: "",
+  userName: "",
   password: "",
 };
 
 // eslint-disable-next-line react/prop-types
-const Login = ({ setIsLoggedIn }) => {
+const Login = ({ setIsLoggedIn, setMessage, setUser_id }) => {
   const [form, setForm] = useState(initalForm);
 
   const changeHandler = (e) => {
@@ -16,7 +17,15 @@ const Login = ({ setIsLoggedIn }) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    setIsLoggedIn(true);
+    axios
+      .post("https://weatherappback.herokuapp.com/auth/login", form)
+      .then((res) => {
+        setMessage(res.data.message);
+        setIsLoggedIn(true);
+        setUser_id(res.data.user.userId);
+        window.localStorage.setItem("token", res.data.token);
+      })
+      .catch((err) => setMessage(err.response.data.message));
   };
 
   return (
@@ -25,7 +34,7 @@ const Login = ({ setIsLoggedIn }) => {
       <form action="submit" onSubmit={submitHandler}>
         <label>
           username &nbsp;
-          <input type="text" name="username" onChange={changeHandler} value={form.username} />
+          <input type="text" name="userName" onChange={changeHandler} value={form.userName} />
         </label>
         <br />
         <label>
