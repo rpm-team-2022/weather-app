@@ -1,0 +1,71 @@
+.current{
+    margin-right: 50px;
+    height: 60px;
+    overflow: hidden;
+    background-color: gainsboro;
+}
+.show{
+    margin-right: 50px;
+    height: 300px;
+    overflow:visible;
+    background-color: gainsboro;
+}
+
+.scroll{
+    cursor: pointer;
+      transition: 0.5s all ease-in-out;
+}
+
+.scroll i{
+    transition: 0.5s color ease-in-out;
+    color: black;
+}
+
+
+.scroll i:hover{
+    color: rgb(254, 254, 254);
+}
+
+.title{
+    text-align: center;
+    color: rgb(255, 254, 254) ;
+}
+
+@media (min-width: 400px) and (max-width: 600px ){ 
+    .current{
+        height: 60px;
+        width: 350px;
+        padding-right: 10px;
+        margin: 0 auto;
+    }
+    .show{
+        width: 350px;
+        height: 300px;
+        margin: 0 auto;
+        
+    }
+    .scroll{
+        height: 50%; 
+        margin: 15px 0;
+   }
+ } 
+ 
+@media (min-width: 600px) and (max-width: 992px ) { 
+    .current{
+        height: 60px;
+        
+        padding-right: 10px;
+        margin: 0 auto;
+    }
+    .show{
+        height: 400px;
+        width: 350px;
+        padding-right: 10px;
+        margin: 0 auto;
+    }
+    .scroll {
+      height: 50%; 
+      margin: 15px 0;
+      
+   }
+ }

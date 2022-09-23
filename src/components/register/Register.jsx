@@ -31,81 +31,56 @@ const Register = ({ setIsRegisterOn, setMessage }) => {
 
   return (
     <div>
-      <h3>sign up</h3>
-      <form onSubmit={registerSubmitHandler}>
-        <div>
-          <label>
-            First Name &nbsp;
-            <input
-              type="text"
-              name="firstName"
-              placeholder="enter your First Name"
-              value={form.firstName}
-              onChange={changeHandler}
-            />
-          </label>
-        </div>
-        <div>
-          <label>
-            Last Name &nbsp;
-            <input
-              type="text"
-              name="lastName"
-              placeholder="enter your Last Name"
-              value={form.lastName}
-              onChange={changeHandler}
-            />
-          </label>
-        </div>
-        <div>
-          <label>
-            Username &nbsp;
-            <input
-              type="text"
-              name="userName"
-              placeholder="enter a username"
-              value={form.userName}
-              onChange={changeHandler}
-            />
-          </label>
-        </div>
-        <div>
-          <label>
-            Password &nbsp;
-            <input
-              type="password"
-              name="password"
-              placeholder="enter a new password"
-              value={form.password}
-              onChange={changeHandler}
-            />
-          </label>
-        </div>
-        <div>
-          <label>
-            Email &nbsp;
-            <input
-              type="email"
-              name="email"
-              placeholder="enter your email address"
-              value={form.email}
-              onChange={changeHandler}
-            />
-          </label>
-          <div>
-            <button type="submit">Submit</button>
+      <div className="container  h-50 ">
+        <div className="row d-flex justify-content-center align-items-center h-75 p-5">
+          <div className="col-lg-6">
+            <div className="card rounded-3 text-black">
+              <div className="row g-0">
+                <h3 className="text-center mt-5">
+                  <span className="text-success">Sign</span> up</h3>
+                <form onSubmit={registerSubmitHandler} className="p-5">
+
+                  <div className="form-outline d-inline-flex p-2">
+                    <input type="text" className="form-control " name="firstName" placeholder="First Name"
+                      value={form.firstName}
+                      onChange={changeHandler} />
+                    <input type="text" className="form-control mx-3" name="lastName" placeholder="Last Name"
+                      value={form.lastName}
+                      onChange={changeHandler} />
+                  </div>
+                  <div className="form-outline mt-3">
+                    <input type="text" className="form-control" name="userName" placeholder="Enter an username"
+                      value={form.userName}
+                      onChange={changeHandler} />
+                  </div>
+
+                  <div className="form-outline mt-3">
+                    <input type="password" className="form-control" name="password" placeholder="Enter a new Password"
+                      value={form.password}
+                      onChange={changeHandler} />
+                  </div>
+                  <div className="form-outline mt-3">
+                    <input type="email" className="form-control" name="email" placeholder="E-mail address"
+                      value={form.email}
+                      onChange={changeHandler} />
+                  </div>
+
+
+                  <div className="text-center pt-1 mt-4 pb-1">
+                    <button type="submit" className=" btn btn-success px-4">Submit</button>
+                  </div>
+                </form>
+              </div>
+              <div className="d-flex justify-content-center align-items-center" >
+                <p className="mx-3">Do you have an account  </p>
+                <button onClick={() => setIsRegisterOn()} className=" btn btn-dark px-4 mb-3">log in</button>
+              </div>
+            </div>
           </div>
         </div>
-      </form>
-      <div>
-        <p>
-          do you have an account &nbsp;
-          <span>
-            <button onClick={() => setIsRegisterOn()}>log in </button>
-          </span>
-        </p>
       </div>
-    </div>
+
+    </div >
   );
 };
 

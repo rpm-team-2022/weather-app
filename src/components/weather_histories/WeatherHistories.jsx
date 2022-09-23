@@ -5,7 +5,7 @@ import WeatherHistory from "../weather_history/WeatherHistory";
 const WeatherHistories = ({ history }) => {
   return (
     <div>
-      <h2>Recent Search History</h2>
+      <h5 className="text-center my-4">Recent Search History</h5>
       {typeof history === "string" ? (
         <p>{history}</p>
       ) : (

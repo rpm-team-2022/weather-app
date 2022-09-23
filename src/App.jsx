@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div className="App">
-      <Nav setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn} />
+      <Nav setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn} /> 
       <Routes>
         <Route
           path="/"

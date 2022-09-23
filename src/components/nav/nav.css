@@ -1,0 +1,37 @@
+.navbar{
+    background-color: gainsboro; 
+}
+
+.nav-item .link , a{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    text-transform: uppercase;
+    transition: 1s color ease-in-out;
+}
+
+.nav-item .link:hover
+         , a:hover{
+    color :rgb(29, 62, 29);
+    font-size: 20px;
+
+}
+.custom-toggler{
+    border: none;
+}
+
+.custom-toggler i{
+    color: rgb(2, 87, 2);
+    transition: 0.2s ease-in-out;
+}
+
+.custom-toggler i:hover{
+   transform: scale(1.2);
+}
+  
+@media (min-width: 450px) { 
+  
+   .collapse{
+    max-height: 180px;
+   }
+ } 

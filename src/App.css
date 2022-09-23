@@ -1,11 +1,49 @@
-.App {
-  text-align: center;
-  border: 2px solid black;
-  width: 80%;
-  text-align: center;
-  margin-left: 10%;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-a {
-  text-decoration: none;
+html ,body{
+  height: 100%;
+  background: url(components/images/bg3.jpg) no-repeat center  center fixed;
+  background-size: cover;
+ 
 }
+.logo {
+  background-image: url("./components/images/LOGO.png");
+  width: 250px;
+  height: 100px;
+}
+
+.gradient-custom-2 {
+
+   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(components/images/side2.jpg);
+   background-size: cover;
+} 
+.main-box{
+  box-shadow:
+  2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+  6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+  12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+  22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+  41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+  100px 100px 80px rgba(0, 0, 0, 0.07)
+;
+
+}
+
+ @media (min-width: 568px) { 
+   .back-pg {
+    height: 100% !important;
+  }
+} 
+@media (min-width: 769px) {
+  .gradient-custom-2 {
+    border-top-right-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+  }
+}
+
+/* ******************** */
+
