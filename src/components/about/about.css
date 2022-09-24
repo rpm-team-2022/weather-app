@@ -1,0 +1,20 @@
+.about-title{
+  color: rgb(7, 101, 73);
+    margin-top: 30px;
+    text-transform: uppercase;
+}
+
+.about-title span{
+    color : black;
+}
+
+.about {
+ 
+  width: 300px;
+  background-color: rgb(234, 231, 231);
+}
+
+.myfooter{
+  margin-top: 60px;
+}
+

@@ -1,10 +1,8 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import './weather-now.css'
-import { useState } from 'react';
 
 const WeatherNow = ({ weatherData }) => {
-  const [scroll , setScroll] = useState(false);
   
   const {
     country,
@@ -24,7 +22,7 @@ const WeatherNow = ({ weatherData }) => {
   return (
     <div>
       <h5 className="text-center my-4">CURRENT WEATHER</h5>
-      <div className={scroll ?"show rounded-3" : "current rounded-3"}>
+      <div className="show rounded-3">
       <div className="container">
       <div className="d-flex justify-content-around" >
         <div>
@@ -34,9 +32,6 @@ const WeatherNow = ({ weatherData }) => {
         <div className="pt-2">
         <span className="title">Local time</span>
         <p>{localtime}</p>
-        </div>
-        <div className="scroll  my-sm-3 px-2" onClick={() => setScroll(!scroll)}>
-        <i className={scroll  ? "fas fa-arrow-up" :"fas fa-arrow-down"}></i>
         </div>
       </div>
       </div>
@@ -84,8 +79,12 @@ const WeatherNow = ({ weatherData }) => {
       <p>{wind_dir}</p>
       </div>
       </div>
-  
-      <p>Gust: {gust_mph}</p>
+      <div className="row">
+      <div className="col">
+       <span className="title">Gust</span>
+      <p>{gust_mph}</p>
+      </div>
+      </div>
     </div>
     </div>
     </div>

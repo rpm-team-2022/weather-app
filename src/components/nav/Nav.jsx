@@ -15,9 +15,9 @@ const Nav = ({ setIsLoggedIn, isLoggedIn }) => {
 
           <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav d-inline-flex px-3">
-          <li className="nav-item py-3 px-1">
+            {isLoggedIn ? (<li className="nav-item py-3 px-1">
             <Link className="link" to={"/"}>Home &nbsp;</Link>
-            </li>
+            </li> ) : ""}
             <li className="nav-item py-3 px-1">
             <Link className="link" to={"/about"}>About &nbsp;</Link>
             </li>

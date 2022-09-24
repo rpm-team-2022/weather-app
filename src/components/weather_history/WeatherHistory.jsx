@@ -4,14 +4,15 @@ import '../weather-now/weather-now.css'
 
 const WeatherHistory = ({ query }) => {
   const [scroll , setScroll] = useState(false);
-  
+    console.log(query);
   return (
     <div>
     <div className={scroll ?"show rounded-3 mb-3" : "current rounded-3 mb-3"}>
     <div className="container">
     <div className="d-flex justify-content-around" >
-      <div className="pt-3">
-      <span>Condition: {query.condition_text}</span>
+      <div className="pt-2">
+      <span>Condition</span>
+      <p>{query.condition_text}</p>
       </div>
       <div className="pt-2">
       <span className="title">Local time</span>
@@ -26,7 +27,7 @@ const WeatherHistory = ({ query }) => {
       <div className="row">
       <div className="col">
        <span className="title">City</span>
-      <p>{query.name}</p>
+      <p>{query.city_name}</p>
       </div>
       <div className="col">
        <span className="title">Region</span>
@@ -65,8 +66,13 @@ const WeatherHistory = ({ query }) => {
       <p>{query.wind_dir}</p>
       </div>
       </div>
-  
-      <p>Gust: {query.gust_mph}</p>
+     
+      <div className="row">
+      <div className="col">
+       <span className="title">Gust</span>
+      <p>{query.gust_mph}</p>
+      </div>
+      </div>
     </div>
   </div>
   </div>

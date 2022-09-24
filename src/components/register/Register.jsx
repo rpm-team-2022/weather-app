@@ -40,11 +40,11 @@ const Register = ({ setIsRegisterOn, setMessage }) => {
                   <span className="text-success">Sign</span> up</h3>
                 <form onSubmit={registerSubmitHandler} className="p-5">
 
-                  <div className="form-outline d-inline-flex p-2">
-                    <input type="text" className="form-control " name="firstName" placeholder="First Name"
+                  <div className="form-outline d-inline-flex ">
+                    <input type="text" className="form-control me-3" name="firstName" placeholder="First Name"
                       value={form.firstName}
                       onChange={changeHandler} />
-                    <input type="text" className="form-control mx-3" name="lastName" placeholder="Last Name"
+                    <input type="text" className="form-control" name="lastName" placeholder="Last Name"
                       value={form.lastName}
                       onChange={changeHandler} />
                   </div>
