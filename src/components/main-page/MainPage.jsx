@@ -111,54 +111,56 @@ const MainPage = ({ message, setMessage, user_id }) => {
 
   return (
     <div>
-    <div className="mainpage">
-      <div className="row d-flex justify-content-center pt-3 ">
-        <div className="col-sm-10">
-          <form onSubmit={submitHandler}>
-            <div className="input-group ">
-              <input
-                id="form1" className="form-control rounded-2 border border-info col-md-3 px-2 mx-2"
-                name="city"
-                type="text"
-                placeholder="Enter City name"
-                value={form.city}
-                onChange={changeHandler}
-              />
+      <div className="mainpage">
+        <div className="row d-flex justify-content-center pt-3 ">
+          <div className="col-sm-10">
+            <form onSubmit={submitHandler}>
+              <div className="input-group ">
+                <input
+                  id="form1"
+                  className="form-control rounded-2 border border-info col-md-3 px-2 mx-2"
+                  name="city"
+                  type="text"
+                  placeholder="Enter City name"
+                  value={form.city}
+                  onChange={changeHandler}
+                />
 
-              <input
-                id="form2" className="form-control border border-info col-sm-3 rounded-2  px-2 mx-2"
-                name="country"
-                type="text"
-                placeholder="Enter City name"
-                value={form.country}
-                onChange={changeHandler}
-              />
-              <button type="submit" className="btn btn-secondary btn-block rounded-2 col-sm-1 mx-2">
-                <i className="fas fa-search"></i>
-              </button>
-            </div>
-          </form>
+                <input
+                  id="form2"
+                  className="form-control border border-info col-sm-3 rounded-2  px-2 mx-2"
+                  name="country"
+                  type="text"
+                  placeholder="Enter region or country"
+                  value={form.country}
+                  onChange={changeHandler}
+                />
+                <button
+                  type="submit"
+                  className="btn btn-secondary btn-block rounded-2 col-sm-1 mx-2">
+                  <i className="fas fa-search"></i>
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
-      </div >
-    </div >
-    <div className="container pt-2 ">
-    <div className="row">
-    <div className="col">
-  { weatherData.country && <WeatherNow weatherData={weatherData} /> }
-  {
-    message && (
-      <div>
-        <p>{message}</p>
       </div>
-    )
-  }
-  </div>
-  <div className="col">
-  <WeatherHistories history={history} />
-  </div>
-  </div>
-  </div>
-    </div >
+      <div className="container pt-2 ">
+        <div className="row">
+          <div className="col">
+            {weatherData.country && <WeatherNow weatherData={weatherData} />}
+            {message && (
+              <div>
+                <p>{message}</p>
+              </div>
+            )}
+          </div>
+          <div className="col">
+            <WeatherHistories history={history} />
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

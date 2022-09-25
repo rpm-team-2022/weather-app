@@ -1,74 +1,71 @@
-.current{
-    margin-right: 50px;
+.current {
+  margin-right: 50px;
+  height: 60px;
+  overflow: hidden;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.show {
+  margin-right: 50px;
+  height: auto;
+  color: white;
+  overflow: visible;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.scroll {
+  cursor: pointer;
+  transition: 0.5s all ease-in-out;
+}
+
+.scroll i {
+  transition: 0.5s color ease-in-out;
+  color: rgb(254, 254, 254);
+}
+
+.scroll i:hover {
+  color: black;
+}
+
+.title {
+  text-align: center;
+  color: rgb(151, 144, 144);
+  text-align: center;
+}
+
+@media (min-width: 400px) and (max-width: 600px) {
+  .current {
     height: 60px;
-    overflow: hidden;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-.show{
-    margin-right: 50px;
-    height: 320px;
-    color: white;
-    overflow:visible;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-
-.scroll{
-    cursor: pointer;
-      transition: 0.5s all ease-in-out;
+    width: 350px;
+    padding-right: 10px;
+    margin: 0 auto;
+  }
+  .show {
+    width: 350px;
+    height: 400px;
+    margin: 0 auto;
+  }
+  .scroll {
+    height: 50%;
+    margin: 15px 0;
+  }
 }
 
-.scroll i{
-    transition: 0.5s color ease-in-out;
-    color: rgb(254, 254, 254);
+@media (min-width: 600px) and (max-width: 992px) {
+  .current {
+    height: 60px;
+    width: 350px;
+    padding-right: 10px;
+    margin: 0 auto;
+  }
+  .show {
+    height: 400px;
+    width: 350px;
+    padding-right: 10px;
+    margin: 0 auto;
+  }
+  .scroll {
+    height: 50%;
+    margin: 15px 0;
+  }
 }
-
-
-.scroll i:hover{
-    color: black;
-}
-
-.title{
-    text-align: center;
-    color: rgb(151, 144, 144) ;
-    text-align: center;
-}
-
-@media (min-width: 400px) and (max-width: 600px ){ 
-    .current{
-        height: 60px;
-        width: 350px;
-        padding-right: 10px;
-        margin: 0 auto;
-    }
-    .show{
-        width: 350px;
-        height: 400px;
-        margin: 0 auto;
-    }
-    .scroll{
-        height: 50%; 
-        margin: 15px 0;
-   }
- } 
- 
-@media (min-width: 600px) and (max-width: 992px ) { 
-    .current{
-        height: 60px;
-        width: 350px;
-        padding-right: 10px;
-        margin: 0 auto;
-    }
-    .show{
-        height: 400px;
-        width: 350px;
-        padding-right: 10px;
-        margin: 0 auto;
-    }
-    .scroll {
-      height: 50%; 
-      margin: 15px 0;
-      
-   }
- }
