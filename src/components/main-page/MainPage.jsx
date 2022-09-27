@@ -95,6 +95,8 @@ const MainPage = ({ message, setMessage, user_id }) => {
             temp_f: weatherData.temp_f,
             wind_dir: weatherData.wind_dir,
             wind_mph: weatherData.wind_mph,
+            humidity: weatherData.humidity,
+            preciptation: weatherData.precip_in,
             user_id,
           },
           {
@@ -103,46 +105,60 @@ const MainPage = ({ message, setMessage, user_id }) => {
             },
           }
         )
-        .then(() => {
-          setMessage("Added to History");
-        })
         .catch((err) => console.log(err));
   }, [weatherData]);
 
   return (
     <div>
-      <h2>this is the main page where all the magic happens</h2>
-      <form onSubmit={submitHandler}>
-        <label>
-          city: &nbsp;
-          <input
-            name="city"
-            type="text"
-            placeholder="please enter a city name"
-            value={form.city}
-            onChange={changeHandler}
-          />
-        </label>
-        <label>
-          Country: &nbsp;
-          <input
-            name="country"
-            type="text"
-            placeholder="please enter a city name"
-            value={form.country}
-            onChange={changeHandler}
-          />
-        </label>
-        &nbsp;
-        <button type="submit">submit</button>
-      </form>
-      {weatherData.country && <WeatherNow weatherData={weatherData} />}
-      {message && (
-        <div>
-          <p>{message}</p>
+      <div className="mainpage">
+        <div className="row d-flex justify-content-center pt-3 ">
+          <div className="col-sm-10">
+            <form onSubmit={submitHandler}>
+              <div className="input-group ">
+                <input
+                  id="form1"
+                  className="form-control rounded-2 border border-info col-md-3 px-2 mx-2"
+                  name="city"
+                  type="text"
+                  placeholder="Enter City name"
+                  value={form.city}
+                  onChange={changeHandler}
+                />
+
+                <input
+                  id="form2"
+                  className="form-control border border-info col-sm-3 rounded-2  px-2 mx-2"
+                  name="country"
+                  type="text"
+                  placeholder="Enter region or country"
+                  value={form.country}
+                  onChange={changeHandler}
+                />
+                <button
+                  type="submit"
+                  className="btn btn-secondary btn-block rounded-2 col-sm-1 mx-2">
+                  <i className="fas fa-search"></i>
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
-      )}
-      <WeatherHistories history={history} />
+      </div>
+      <div className="container pt-2 ">
+        <div className="row">
+          <div className="col">
+            {weatherData.country && <WeatherNow weatherData={weatherData} />}
+            {message && (
+              <div>
+                <p>{message}</p>
+              </div>
+            )}
+          </div>
+          <div className="col">
+            <WeatherHistories history={history} />
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

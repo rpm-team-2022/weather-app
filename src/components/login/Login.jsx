@@ -30,24 +30,20 @@ const Login = ({ setIsLoggedIn, setMessage, setUser_id }) => {
 
   return (
     <div>
-      <h2>Login</h2>
+      <h5>LOGIN</h5>
       <form action="submit" onSubmit={submitHandler}>
-        <label>
-          username &nbsp;
-          <input type="text" name="userName" onChange={changeHandler} value={form.userName} />
-        </label>
-        <br />
-        <label>
-          password &nbsp;
-          <input
-            type="password"
-            name="password"
+      <div className="form-outline mb-3">
+          <input type="text"  className="form-control" name="userName" placeholder="Username"
+          onChange={changeHandler} value={form.userName}/>
+        </div>
+        <div className="form-outline mb-3">
+            <input type="password" className="form-control" name="password" placeholder="Password"
             onChange={changeHandler}
-            value={form.password}
-          />
-        </label>
-        <br />
-        <button>Login</button>
+            value={form.password}/>
+        </div>
+        <div className="text-center pt-1 mb-4 pb-1">
+        <button className="btn btn-success px-4">Login</button>
+        </div>
       </form>
     </div>
   );
