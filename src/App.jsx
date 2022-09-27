@@ -11,17 +11,18 @@ function App() {
   const [message, setMessage] = useState(null);
   const [user_id, setUser_id] = useState(null);
 
+  let token = window.localStorage.getItem("token");
+
   return (
     <div className="App">
-      <Nav setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn} /> 
+      <Nav setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn} />
       <Routes>
         <Route
           path="/"
           element={
-            !isLoggedIn ? (
+            !token ? (
               <LandingPage
                 setIsLoggedIn={setIsLoggedIn}
-                isLoggedIn={isLoggedIn}
                 message={message}
                 setMessage={setMessage}
                 setUser_id={setUser_id}

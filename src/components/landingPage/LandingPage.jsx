@@ -5,7 +5,7 @@ import Register from "../register/Register";
 import logo from "../images/LOGO.png";
 
 const LandingPage = (props) => {
-  const { setIsLoggedIn, message, setMessage, setUser_id } = props;
+  const { message, setMessage, setUser_id } = props;
 
   const [isRegisterOn, setIsRegisterOn] = useState(false);
 
@@ -31,7 +31,6 @@ const LandingPage = (props) => {
                             <img src={logo} alt="logo" className="logo mt-1 mb-5 pb-1" />
                           </div>
                           <Login
-                            setIsLoggedIn={setIsLoggedIn}
                             message={message}
                             setMessage={setMessage}
                             setUser_id={setUser_id}

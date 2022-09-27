@@ -25,11 +25,12 @@ const initalWeatherData = {
   precip_in: 0,
 };
 // eslint-disable-next-line react/prop-types
-const MainPage = ({ message, setMessage, user_id }) => {
+const MainPage = ({ message, setMessage }) => {
   const [weatherData, setWeatherData] = useState(initalWeatherData);
   const [form, setForm] = useState(initialForm);
   const [history, setHistory] = useState("");
-
+  const user_id = window.localStorage.getItem("user_id");
+  console.log(user_id);
   const changeHandler = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });

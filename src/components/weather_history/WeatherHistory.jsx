@@ -4,7 +4,6 @@ import "../weather-now/weather-now.css";
 
 const WeatherHistory = ({ query }) => {
   const [scroll, setScroll] = useState(false);
-  console.log(query);
   return (
     <div>
       <div className={scroll ? "show rounded-3 mb-3" : "current rounded-3 mb-3"}>
