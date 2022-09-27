@@ -95,6 +95,8 @@ const MainPage = ({ message, setMessage, user_id }) => {
             temp_f: weatherData.temp_f,
             wind_dir: weatherData.wind_dir,
             wind_mph: weatherData.wind_mph,
+            humidity: weatherData.humidity,
+            preciptation: weatherData.precip_in,
             user_id,
           },
           {
@@ -103,9 +105,6 @@ const MainPage = ({ message, setMessage, user_id }) => {
             },
           }
         )
-        .then(() => {
-          setMessage("Added to History");
-        })
         .catch((err) => console.log(err));
   }, [weatherData]);
 
