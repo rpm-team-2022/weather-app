@@ -66,46 +66,45 @@ const MainPage = ({ message, setMessage, user_id }) => {
   const token = window.localStorage.getItem("token");
 
   useEffect(() => {
-    user_id &&
-      axios
-        .get(`https://weatherappback.herokuapp.com/history/userHistory/${user_id}`, {
+    axios
+      .post(
+        `https://weatherappback.herokuapp.com/history/addToHistory`,
+        {
+          country: weatherData.country,
+          region: weatherData.region,
+          city_name: weatherData.name,
+          local_time: weatherData.localtime,
+          condition_text: weatherData.conditionText,
+          feels_like: weatherData.feelslike_f,
+          gust_mph: weatherData.gust_mph,
+          temp_f: weatherData.temp_f,
+          wind_dir: weatherData.wind_dir,
+          wind_mph: weatherData.wind_mph,
+          humidity: weatherData.humidity,
+          preciptation: weatherData.precip_in,
+          user_id,
+        },
+        {
           headers: {
             authorization: token,
           },
-        })
-        .then((res) => {
-          setHistory(res.data.history);
-        })
-        .catch((err) => console.log(err));
+        }
+      )
+      .catch((err) => console.log(err));
   }, [weatherData]);
 
   useEffect(() => {
-    weatherData &&
-      axios
-        .post(
-          `https://weatherappback.herokuapp.com/history/addToHistory`,
-          {
-            country: weatherData.country,
-            region: weatherData.region,
-            city_name: weatherData.name,
-            local_time: weatherData.localtime,
-            condition_text: weatherData.conditionText,
-            feels_like: weatherData.feelslike_f,
-            gust_mph: weatherData.gust_mph,
-            temp_f: weatherData.temp_f,
-            wind_dir: weatherData.wind_dir,
-            wind_mph: weatherData.wind_mph,
-            humidity: weatherData.humidity,
-            preciptation: weatherData.precip_in,
-            user_id,
-          },
-          {
-            headers: {
-              authorization: token,
-            },
-          }
-        )
-        .catch((err) => console.log(err));
+    axios
+      .get(`https://weatherappback.herokuapp.com/history/userHistory/${user_id}`, {
+        headers: {
+          authorization: token,
+        },
+      })
+      .then((res) => {
+        console.log(res, "get data");
+        setHistory(res.data.history);
+      })
+      .catch((err) => console.log(err));
   }, [weatherData]);
 
   return (
